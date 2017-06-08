@@ -40,4 +40,8 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.web_console.whitelisted_ips = ['10.0.2.0/24']
+
+  # pops email into browser
+  config.action_mailer.delivery_method = :letter_opener
+
 end
