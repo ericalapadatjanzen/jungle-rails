@@ -1,12 +1,12 @@
+
 <section class="cart-show">
 
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
 <% if cart.size == 0 %>
-<% puts @cart, "cart" %>
   <h3> Your cart is empty, please return to <%= link_to "Home Page", '/' %></h3>
-<%else %>
+<% else %>
     <div class="panel panel-default items">
       <table class="table table-bordered">
         <thead>

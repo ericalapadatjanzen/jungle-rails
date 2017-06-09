@@ -1,0 +1,24 @@
+
+
+
+Feature: Admin Categories
+
+Major: Restful routes (resources) should be used, and there should be no extra, unused routes exposed ????
+
+
+
+
+TO DO:
+
+
+-error message for login
+
+
+
+Feature: Product Rating
+
+Major: Use of nested resources in the routing, and not using custom controller actions
+Major: As a visitor I can view the overall rating of products as I browse the catalog
+Major: As a visitor I can view the list of ratings and reviews when viewing the product detail
+Major: As a logged in user I can rate & review a product in a single step
+Minor: As a logged in user I can delete a rating or review that I previously created

@@ -4,7 +4,7 @@ default from: 'no-reply@jungle.com',
 
   def confirmation(order)
     @order = order
-    mail(to: @order.email,
-         bcc: ["ericalapadatjanzen@gmail.com"])
+    subject = "Order # #{@order.id}"
+    mail(to: @order.email, subject: subject)
   end
 end
