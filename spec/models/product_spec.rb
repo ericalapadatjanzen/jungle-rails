@@ -2,22 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-    it 'should be true if name is present' do
-      category = Category.new(name: "apparel")
-      product = Product.new(name: 'a', price: 1, quantity: 1, category: category )
-      expect(product).to(be_valid)
-    end
-     it 'should be true if price is present' do
-      category = Category.new(name: "apparel")
-      product = Product.new(name: 'a', price: 1, quantity: 1, category: category )
-      expect(product).to(be_valid)
-    end
-     it 'should be true if quantity is present' do
-      category = Category.new(name: "apparel")
-      product = Product.new(name: 'a', price: 1, quantity: 1, category: category )
-      expect(product).to(be_valid)
-    end
-     it 'should be true if category is present' do
+    it 'should be true if name, category, price, and quantity are present' do
       category = Category.new(name: "apparel")
       product = Product.new(name: 'a', price: 1, quantity: 1, category: category )
       expect(product).to(be_valid)
