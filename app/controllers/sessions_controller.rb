@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       # redirect_to '/login', notice: "Email or password not correct"  ## idea #1
       # flash[:notice] = 'Successfully checked in'   ## idea #2
 
-      redirect_to '/login', alert: "Invalid email or password"
+      redirect_to '/login', notice: "Invalid email or password"
     end
   end
 

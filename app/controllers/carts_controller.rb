@@ -5,20 +5,17 @@ class CartsController < ApplicationController
 
   def add_item
 
-    # stock_qty = Product.find(product_id)
-    # stock_qty = 1 # placeholder line to avoid crashing
+    product_id = params[:product_id].to_s
+    stock_qty = Product.find(product_id).quantity
 
-    # if stock_qty > 0
-
-      product_id = params[:product_id].to_s
-
+    if stock_qty > 0
       item = cart[product_id] || { "quantity" => 0 }
       item["quantity"] += 1
       cart[product_id] = item
       update_cart cart
-    # else
-    #   flash[:err] = "This item is sold out"
-    # end
+    else
+      flash[:err] = "This item is sold out"
+    end
 
     redirect_to :back
   end

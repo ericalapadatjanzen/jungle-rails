@@ -1,12 +1,13 @@
- <h2><%= review.description%></h2>
-
- <h2><%= review.rating%></h2>
-
-<p>delete</p>
-   <% if current_user.id == review.user_id %>
+<div class="review">
+  <h4>Review:</h4>
+  <p><%= review.description%></p>
+  <h4>Rating:</h4>
+  <p> <%= review.rating%></p>
+  <% if current_user.id == review.user_id %>
     <%= link_to 'Delete', product_review_path(@product, review),
               method: :delete,
               data: { confirm: 'Are you sure?' },
               class: "btn btn-primary" %>
 
-<% end %>
+  <% end %>
+</div>

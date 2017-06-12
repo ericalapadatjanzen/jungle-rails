@@ -31,19 +31,21 @@
 
 <div class="reviews">
   <% if current_user %>
-    <h2>New review</h2>
-    <%= form_for([@product, @new_review]) do |form| %>
-      <div class="field">
-        <%= form.label :description %>
-        <%= form.text_area :description, id: :review_description %>
-        <%= form.label :rating %>
-        <%= form.select :rating, ["1","2","3","4","5"], id: :review_rating %>
-        <%= form.hidden_field :user_id, value: current_user.id %>
-      </div>
-      <div class="actions">
-        <%= form.submit %>
-      </div>
-    <% end %>
+    <div class="new_review">
+      <h2>Write a Review:</h2>
+      <%= form_for([@product, @new_review]) do |form| %>
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_area :description, id: :review_description %>
+          <%= form.label :rating %>
+          <%= form.select :rating, ["1","2","3","4","5"], id: :review_rating %>
+          <%= form.hidden_field :user_id, value: current_user.id %>
+        </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
   <% else %>
     <p>Please <%= link_to "login", '/login' %> to create a new review.</p>
   <% end %>
