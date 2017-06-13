@@ -30,11 +30,17 @@ RSpec.describe User, type: :model do
       user = User.new(password: "1234567", password_confirmation: "1234567", first_name: "bob", last_name: "Boberson")
       expect(user).to_not(be_valid)
     end
-      it 'should be false if email is not unique(also not case sensitive)' do
+      it 'should be false if email is not unique' do
       user = User.new(password: "1234567", password_confirmation: "1234567", first_name: "bob",last_name: "Boberson", email: "bob@bob.com")
       user.save
       user1 = User.new(password: "1234567", password_confirmation: "1234567", first_name: "bob", last_name: "Boberson", email: "bob@bob.com")
       expect(user1).to_not(be_valid)
+    end
+    it 'should be true if email is  unique' do
+      user = User.new(password: "1234567", password_confirmation: "1234567", first_name: "bob",last_name: "Boberson", email: "bob@bob.com")
+      user.save
+      user1 = User.new(password: "1234567", password_confirmation: "1234567", first_name: "bob", last_name: "Boberson", email: "tom@bob.com")
+      expect(user1).to(be_valid)
     end
       it 'should be false if email is not unique also not case sensitive' do
       user = User.new(password: "1234567", password_confirmation: "1234567", first_name: "bob",last_name: "Boberson", email: "bob@bob.com")
