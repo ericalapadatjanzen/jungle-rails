@@ -20,7 +20,7 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
 
     first('article.product').find_link('Add').click
     # commented out b/c it's for debugging only
-    save_and_open_screenshot
+    # save_and_open_screenshot
 
     expect(page).to have_content "My Cart (1)"
   end
